@@ -19,10 +19,12 @@ final class ColourPaletteViewController: UIViewController {
         tableView.register(ColourTableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
+    
     private lazy var dataSource = ColourPaletteTableViewDataSource(tableView: tableView) { [weak self] (tableView, indexPath, colourData) -> UITableViewCell? in
         guard let self = self else { return nil }
         let colourCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ColourTableViewCell
         colourCell.colourData = colourData
+        colourCell.accessoryType = .disclosureIndicator
         return colourCell
     }
     

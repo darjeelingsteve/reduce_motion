@@ -55,6 +55,23 @@
           "name": "systemGray6"
         }
       ]
+    },
+    {
+      "name": "Fills",
+      "colours": [
+        {
+          "name": "systemFill"
+        },
+        {
+          "name": "secondarySystemFill"
+        },
+        {
+          "name": "tertiarySystemFill"
+        },
+        {
+          "name": "quaternarySystemFill"
+        }
+      ]
     }
   ]
 }

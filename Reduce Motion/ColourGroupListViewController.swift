@@ -10,6 +10,10 @@ import UIKit
 
 /// Displays a list of colour groups.
 final class ColourPaletteViewController: UIViewController {
+    
+    /// The delegate of the receiver.
+    weak var delegate: ColourPaletteViewControllerDelegate?
+    
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.register(ColourTableViewCell.self, forCellReuseIdentifier: "cell")
@@ -49,8 +53,29 @@ final class ColourPaletteViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        tableView.dataSource = dataSource
+        tableView.delegate = self
     }
+}
+
+// MARK: - UITableViewDelegate
+
+extension ColourPaletteViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let selectedColourData = dataSource.itemIdentifier(for: indexPath) else { return }
+        tableView.deselectRow(at: indexPath, animated: false)
+        delegate?.colourPaletteViewController(self, didSelectColourData: selectedColourData)
+    }
+}
+
+/// The protocol to conform to for delegates of `ColourPaletteViewController`.
+protocol ColourPaletteViewControllerDelegate: AnyObject {
+    
+    /// The message sent when the user selects a colour from the sender's list.
+    /// - Parameters:
+    ///   - colourPaletteViewController: The controller sending the message.
+    ///   - colourData: The colour data representing the colour the user
+    ///   selected.
+    func colourPaletteViewController(_ colourPaletteViewController: ColourPaletteViewController, didSelectColourData colourData: ColourData)
 }
 
 private enum TableSection: Hashable {

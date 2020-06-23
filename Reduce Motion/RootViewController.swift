@@ -13,7 +13,7 @@ final class RootViewController: UIViewController {
     private let childNavigationController: UINavigationController
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        childNavigationController = UINavigationController(rootViewController: ViewController())
+        childNavigationController = UINavigationController(rootViewController: ColourPaletteViewController(colourPalette: ColourPalette.systemColours))
         childNavigationController.navigationBar.prefersLargeTitles = true
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }

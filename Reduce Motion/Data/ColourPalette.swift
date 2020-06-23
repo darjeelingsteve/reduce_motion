@@ -1,5 +1,5 @@
 //
-//  ColourGroup.swift
+//  ColourPalette.swift
 //  Reduce Motion
 //
 //  Created by Stephen Anthony on 20/06/2020.
@@ -8,9 +8,19 @@
 
 import UIKit
 
+/// Represents a palette of colours.
+struct ColourPalette: Codable, Hashable {
+    static let systemColours = try! JSONDecoder().decode(ColourPalette.self, from: Data(contentsOf: Bundle.main.url(forResource: "System Colours", withExtension: "json")!))
+    
+    /// The name of the palette.
+    let name: String
+    
+    /// The colour groups contained in the palette.
+    let colourGroups: [ColourGroup]
+}
+
 /// Represents a group of colours.
 struct ColourGroup: Codable, Hashable {
-    static let systemColours = try! JSONDecoder().decode([ColourGroup].self, from: Data(contentsOf: Bundle.main.url(forResource: "System Colours", withExtension: "json")!))
     
     /// The name of the group.
     let name: String

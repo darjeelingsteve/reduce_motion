@@ -13,9 +13,11 @@ final class RootViewController: UIViewController {
     private let childNavigationController: UINavigationController
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        childNavigationController = UINavigationController(rootViewController: ColourPaletteViewController(colourPalette: ColourPalette.systemColours))
+        let colourPaletteViewController = ColourPaletteViewController(colourPalette: ColourPalette.systemColours)
+        childNavigationController = UINavigationController(rootViewController: colourPaletteViewController)
         childNavigationController.navigationBar.prefersLargeTitles = true
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        colourPaletteViewController.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -34,5 +36,23 @@ final class RootViewController: UIViewController {
             childNavigationController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         childNavigationController.didMove(toParent: self)
+    }
+}
+
+// MARK: - ColourPaletteViewControllerDelegate
+
+extension RootViewController: ColourPaletteViewControllerDelegate {
+    func colourPaletteViewController(_ colourPaletteViewController: ColourPaletteViewController, didSelectColourData colourData: ColourData) {
+        let colourDataViewController = ColourDataViewController(colourData: colourData)
+        colourDataViewController.delegate = self
+        present(colourDataViewController, animated: true)
+    }
+}
+
+// MARK: - ColourDataViewControllerDelegate
+
+extension RootViewController: ColourDataViewControllerDelegate {
+    func colourDataViewControllerDidFinish(_ colourDataViewController: ColourDataViewController) {
+        dismiss(animated: true)
     }
 }

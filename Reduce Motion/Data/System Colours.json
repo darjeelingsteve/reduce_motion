@@ -1,0 +1,57 @@
+[
+	{
+		"name": "Colours",
+		"colours": [
+			{
+				"name": "systemRed"
+			},
+			{
+				"name": "systemGreen"
+			},
+			{
+				"name": "systemBlue"
+			},
+			{
+				"name": "systemOrange"
+			},
+			{
+				"name": "systemYellow"
+			},
+			{
+				"name": "systemPink"
+			},
+			{
+				"name": "systemPurple"
+			},
+			{
+				"name": "systemTeal"
+			},
+			{
+				"name": "systemIndigo"
+			}
+		]
+	},
+	{
+		"name": "Greys",
+		"colours": [
+			{
+				"name": "systemGray"
+			},
+			{
+				"name": "systemGray2"
+			},
+			{
+				"name": "systemGray3"
+			},
+			{
+				"name": "systemGray4"
+			},
+			{
+				"name": "systemGray5"
+			},
+			{
+				"name": "systemGray6"
+			}
+		]
+	}
+]

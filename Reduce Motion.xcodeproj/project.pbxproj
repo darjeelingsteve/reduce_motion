@@ -13,6 +13,8 @@
 		4847134D249E7248001B237B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4847134C249E7248001B237B /* Assets.xcassets */; };
 		48471350249E7248001B237B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4847134E249E7248001B237B /* LaunchScreen.storyboard */; };
 		48471358249E7AA6001B237B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48471357249E7AA6001B237B /* RootViewController.swift */; };
+		4847135D249E8456001B237B /* ColourGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847135C249E8456001B237B /* ColourGroup.swift */; };
+		4847135F249E8727001B237B /* System Colours.json in Resources */ = {isa = PBXBuildFile; fileRef = 4847135E249E8727001B237B /* System Colours.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		4847134F249E7248001B237B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48471351249E7248001B237B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48471357249E7AA6001B237B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		4847135C249E8456001B237B /* ColourGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourGroup.swift; sourceTree = "<group>"; };
+		4847135E249E8727001B237B /* System Colours.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "System Colours.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		48471342249E7247001B237B /* Reduce Motion */ = {
 			isa = PBXGroup;
 			children = (
+				4847135B249E8443001B237B /* Data */,
 				48471343249E7247001B237B /* AppDelegate.swift */,
 				48471345249E7247001B237B /* SceneDelegate.swift */,
 				48471357249E7AA6001B237B /* RootViewController.swift */,
@@ -65,6 +70,15 @@
 				48471351249E7248001B237B /* Info.plist */,
 			);
 			path = "Reduce Motion";
+			sourceTree = "<group>";
+		};
+		4847135B249E8443001B237B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4847135C249E8456001B237B /* ColourGroup.swift */,
+				4847135E249E8727001B237B /* System Colours.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48471350249E7248001B237B /* LaunchScreen.storyboard in Resources */,
+				4847135F249E8727001B237B /* System Colours.json in Resources */,
 				4847134D249E7248001B237B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +154,7 @@
 			files = (
 				48471348249E7247001B237B /* ViewController.swift in Sources */,
 				48471344249E7247001B237B /* AppDelegate.swift in Sources */,
+				4847135D249E8456001B237B /* ColourGroup.swift in Sources */,
 				48471358249E7AA6001B237B /* RootViewController.swift in Sources */,
 				48471346249E7247001B237B /* SceneDelegate.swift in Sources */,
 			);

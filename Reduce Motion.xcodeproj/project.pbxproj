@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		483D47CB24A28CF600D5B1D9 /* ColourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483D47CA24A28CF600D5B1D9 /* ColourTableViewCell.swift */; };
+		483D47CD24A2926E00D5B1D9 /* ColourDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483D47CC24A2926E00D5B1D9 /* ColourDataViewController.swift */; };
 		48471344249E7247001B237B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48471343249E7247001B237B /* AppDelegate.swift */; };
 		48471346249E7247001B237B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48471345249E7247001B237B /* SceneDelegate.swift */; };
 		4847134D249E7248001B237B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4847134C249E7248001B237B /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		483D47CA24A28CF600D5B1D9 /* ColourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourTableViewCell.swift; sourceTree = "<group>"; };
+		483D47CC24A2926E00D5B1D9 /* ColourDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourDataViewController.swift; sourceTree = "<group>"; };
 		48471340249E7247001B237B /* Reduce Motion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reduce Motion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48471343249E7247001B237B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48471345249E7247001B237B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,10 +66,11 @@
 			children = (
 				4847135B249E8443001B237B /* Data */,
 				48471343249E7247001B237B /* AppDelegate.swift */,
+				483D47CC24A2926E00D5B1D9 /* ColourDataViewController.swift */,
 				48471359249E7DEA001B237B /* ColourGroupListViewController.swift */,
 				483D47CA24A28CF600D5B1D9 /* ColourTableViewCell.swift */,
-				48471345249E7247001B237B /* SceneDelegate.swift */,
 				48471357249E7AA6001B237B /* RootViewController.swift */,
+				48471345249E7247001B237B /* SceneDelegate.swift */,
 				4847134C249E7248001B237B /* Assets.xcassets */,
 				4847134E249E7248001B237B /* LaunchScreen.storyboard */,
 				48471351249E7248001B237B /* Info.plist */,
@@ -159,6 +162,7 @@
 				48471344249E7247001B237B /* AppDelegate.swift in Sources */,
 				4847135D249E8456001B237B /* ColourPalette.swift in Sources */,
 				48471358249E7AA6001B237B /* RootViewController.swift in Sources */,
+				483D47CD24A2926E00D5B1D9 /* ColourDataViewController.swift in Sources */,
 				483D47CB24A28CF600D5B1D9 /* ColourTableViewCell.swift in Sources */,
 				48471346249E7247001B237B /* SceneDelegate.swift in Sources */,
 			);

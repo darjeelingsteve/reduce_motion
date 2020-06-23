@@ -24,6 +24,7 @@ final class ColourPaletteViewController: UIViewController {
     
     init(colourPalette: ColourPalette) {
         super.init(nibName: nil, bundle: nil)
+        title = colourPalette.name
         var snapshot = NSDiffableDataSourceSnapshot<TableSection, ColourData>()
         colourPalette.colourGroups.forEach { (colourGroup) in
             snapshot.appendSections([.colourList(name: colourGroup.name)])
@@ -38,7 +39,6 @@ final class ColourPaletteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = NSLocalizedString("Colours", comment: "Colour list title")
         view.backgroundColor = .systemGroupedBackground
         
         view.addSubview(tableView)

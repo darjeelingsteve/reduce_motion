@@ -12,13 +12,13 @@ import UIKit
 final class ColourPaletteViewController: UIViewController {
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(ColourTableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
     private lazy var dataSource = ColourPaletteTableViewDataSource(tableView: tableView) { [weak self] (tableView, indexPath, colourData) -> UITableViewCell? in
         guard let self = self else { return nil }
-        let colourCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        colourCell.textLabel?.text = colourData.name
+        let colourCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ColourTableViewCell
+        colourCell.colourData = colourData
         return colourCell
     }
     

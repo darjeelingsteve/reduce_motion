@@ -12,6 +12,7 @@
 		48471348249E7247001B237B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48471347249E7247001B237B /* ViewController.swift */; };
 		4847134D249E7248001B237B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4847134C249E7248001B237B /* Assets.xcassets */; };
 		48471350249E7248001B237B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4847134E249E7248001B237B /* LaunchScreen.storyboard */; };
+		48471358249E7AA6001B237B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48471357249E7AA6001B237B /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4847134C249E7248001B237B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4847134F249E7248001B237B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48471351249E7248001B237B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48471357249E7AA6001B237B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				48471343249E7247001B237B /* AppDelegate.swift */,
 				48471345249E7247001B237B /* SceneDelegate.swift */,
+				48471357249E7AA6001B237B /* RootViewController.swift */,
 				48471347249E7247001B237B /* ViewController.swift */,
 				4847134C249E7248001B237B /* Assets.xcassets */,
 				4847134E249E7248001B237B /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			files = (
 				48471348249E7247001B237B /* ViewController.swift in Sources */,
 				48471344249E7247001B237B /* AppDelegate.swift in Sources */,
+				48471358249E7AA6001B237B /* RootViewController.swift in Sources */,
 				48471346249E7247001B237B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

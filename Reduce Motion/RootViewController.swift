@@ -57,6 +57,8 @@ extension RootViewController: ColourPaletteViewControllerDelegate {
 
 extension RootViewController: ColourDataViewControllerDelegate {
     func colourDataViewControllerDidFinish(_ colourDataViewController: ColourDataViewController) {
-        dismiss(animated: true)
+        dismiss(animated: true) {
+            self.colourDataViewTransitioningDelegate = nil
+        }
     }
 }

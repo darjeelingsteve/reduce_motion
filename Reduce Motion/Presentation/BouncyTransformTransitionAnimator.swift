@@ -16,16 +16,14 @@ final class BouncyTransformTransitionAnimator: NSObject {
     ///
     /// * `present` - The style to use when presenting a view controller.
     /// * `dismiss` - The style to use when dismissing a view controller.
-    enum Style {
+    fileprivate enum Style {
         case present
         case dismiss
     }
     
-    private let style: Style
     private let sourceRect: CGRect
     
-    init(style: Style, sourceRect: CGRect) {
-        self.style = style
+    init(sourceRect: CGRect) {
         self.sourceRect = sourceRect
     }
 }
@@ -34,21 +32,27 @@ final class BouncyTransformTransitionAnimator: NSObject {
 
 extension BouncyTransformTransitionAnimator: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return style.transitionDuration
+        return style(for: transitionContext).transitionDuration
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let style = self.style(for: transitionContext)
         style.performPreAnimationConfiguration(using: transitionContext, sourceRect: sourceRect)
         
         UIView.animateKeyframes(withDuration: transitionDuration(using: transitionContext), delay: 0, options: [], animations: {
-            self.style.addAlphaChangeKeyFrameAnimations(using: transitionContext)
+            style.addAlphaChangeKeyFrameAnimations(using: transitionContext)
         }, completion: nil)
         
         UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, usingSpringWithDamping: style.springDamping, initialSpringVelocity: 18, options: [], animations: {
-            self.style.performTransitionAnimations(using: transitionContext, sourceRect: self.sourceRect)
+            style.performTransitionAnimations(using: transitionContext, sourceRect: self.sourceRect)
         }, completion: { _ in
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         })
+    }
+    
+    private func style(for transitionContext: UIViewControllerContextTransitioning?) -> Style {
+        let toViewController = transitionContext!.viewController(forKey: .to)!
+        return toViewController.isBeingPresented ? .present : .dismiss
     }
 }
 

@@ -24,10 +24,10 @@ extension ColourDataViewTransitioningDelegate: UIViewControllerTransitioningDele
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return BouncyTransformTransitionAnimator(style: .present, sourceRect: sourceRect)
+        return BouncyTransformTransitionAnimator(sourceRect: sourceRect)
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return BouncyTransformTransitionAnimator(style: .dismiss, sourceRect: sourceRect)
+        return BouncyTransformTransitionAnimator(sourceRect: sourceRect)
     }
 }

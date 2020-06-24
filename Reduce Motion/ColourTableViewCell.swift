@@ -19,6 +19,12 @@ final class ColourTableViewCell: UITableViewCell {
         }
     }
     
+    /// The frame at which the receiver's colour is rendered, in the receiver's
+    /// coordinate space.
+    var colourWellFrame: CGRect {
+        return convert(colourWell.bounds, from: colourWell)
+    }
+    
     private let colourWell = ColourWellView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

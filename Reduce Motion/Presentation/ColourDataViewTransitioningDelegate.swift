@@ -18,16 +18,24 @@ final class ColourDataViewTransitioningDelegate: NSObject {
     }
 }
 
+// MARK: - UIViewControllerTransitioningDelegate
+
 extension ColourDataViewTransitioningDelegate: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         return CentreSquarePresentationController(presentedViewController: presented, presenting: presenting)
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard UIAccessibility.isReduceMotionEnabled == false else {
+            return CrossFadeTransitionAnimator()
+        }
         return BouncyTransformTransitionAnimator(sourceRect: sourceRect)
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard UIAccessibility.isReduceMotionEnabled == false else {
+            return CrossFadeTransitionAnimator()
+        }
         return BouncyTransformTransitionAnimator(sourceRect: sourceRect)
     }
 }

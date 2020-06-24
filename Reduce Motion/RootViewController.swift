@@ -11,6 +11,7 @@ import UIKit
 /// The view controller responsible for hosting the main scene's user interface.
 final class RootViewController: UIViewController {
     private let childNavigationController: UINavigationController
+    private var colourDataViewTransitioningDelegate: ColourDataViewTransitioningDelegate?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         let colourPaletteViewController = ColourPaletteViewController(colourPalette: ColourPalette.systemColours)
@@ -43,8 +44,11 @@ final class RootViewController: UIViewController {
 
 extension RootViewController: ColourPaletteViewControllerDelegate {
     func colourPaletteViewController(_ colourPaletteViewController: ColourPaletteViewController, didSelectColourData colourData: ColourData, selectionRect: CGRect) {
+        colourDataViewTransitioningDelegate = ColourDataViewTransitioningDelegate(sourceRect: selectionRect)
         let colourDataViewController = ColourDataViewController(colourData: colourData)
         colourDataViewController.delegate = self
+        colourDataViewController.transitioningDelegate = colourDataViewTransitioningDelegate
+        colourDataViewController.modalPresentationStyle = .custom
         present(colourDataViewController, animated: true)
     }
 }

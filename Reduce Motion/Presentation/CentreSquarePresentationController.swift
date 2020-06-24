@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// The presentation controller responsible for presenting view controller
+/// The presentation controller responsible for presenting view controllers
 /// centred within the presentation context.
 final class CentreSquarePresentationController: UIPresentationController {
     override var frameOfPresentedViewInContainerView: CGRect {

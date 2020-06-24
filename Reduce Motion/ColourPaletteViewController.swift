@@ -65,7 +65,9 @@ extension ColourPaletteViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let selectedColourData = dataSource.itemIdentifier(for: indexPath) else { return }
         tableView.deselectRow(at: indexPath, animated: false)
-        delegate?.colourPaletteViewController(self, didSelectColourData: selectedColourData)
+        delegate?.colourPaletteViewController(self,
+                                              didSelectColourData: selectedColourData,
+                                              selectionRect: view.convert(tableView.rectForRow(at: indexPath), from: tableView))
     }
 }
 
@@ -77,7 +79,9 @@ protocol ColourPaletteViewControllerDelegate: AnyObject {
     ///   - colourPaletteViewController: The controller sending the message.
     ///   - colourData: The colour data representing the colour the user
     ///   selected.
-    func colourPaletteViewController(_ colourPaletteViewController: ColourPaletteViewController, didSelectColourData colourData: ColourData)
+    ///   - selectionRect: The rect in the sender's view's coordinate space at
+    ///   which the user selected the given colour data.
+    func colourPaletteViewController(_ colourPaletteViewController: ColourPaletteViewController, didSelectColourData colourData: ColourData, selectionRect: CGRect)
 }
 
 private enum TableSection: Hashable {

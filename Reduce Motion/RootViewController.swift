@@ -42,7 +42,7 @@ final class RootViewController: UIViewController {
 // MARK: - ColourPaletteViewControllerDelegate
 
 extension RootViewController: ColourPaletteViewControllerDelegate {
-    func colourPaletteViewController(_ colourPaletteViewController: ColourPaletteViewController, didSelectColourData colourData: ColourData) {
+    func colourPaletteViewController(_ colourPaletteViewController: ColourPaletteViewController, didSelectColourData colourData: ColourData, selectionRect: CGRect) {
         let colourDataViewController = ColourDataViewController(colourData: colourData)
         colourDataViewController.delegate = self
         present(colourDataViewController, animated: true)

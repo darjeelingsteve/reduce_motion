@@ -64,7 +64,7 @@ final class ColourPaletteViewController: UIViewController {
 extension ColourPaletteViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let selectedColourData = dataSource.itemIdentifier(for: indexPath) else { return }
-        tableView.deselectRow(at: indexPath, animated: false)
+        tableView.deselectRow(at: indexPath, animated: true)
         let cell = tableView.cellForRow(at: indexPath) as! ColourTableViewCell
         delegate?.colourPaletteViewController(self,
                                               didSelectColourData: selectedColourData,

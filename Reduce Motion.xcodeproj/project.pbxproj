@@ -14,7 +14,7 @@
 		4847134D249E7248001B237B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4847134C249E7248001B237B /* Assets.xcassets */; };
 		48471350249E7248001B237B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4847134E249E7248001B237B /* LaunchScreen.storyboard */; };
 		48471358249E7AA6001B237B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48471357249E7AA6001B237B /* RootViewController.swift */; };
-		4847135A249E7DEA001B237B /* ColourGroupListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48471359249E7DEA001B237B /* ColourGroupListViewController.swift */; };
+		4847135A249E7DEA001B237B /* ColourPaletteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48471359249E7DEA001B237B /* ColourPaletteViewController.swift */; };
 		4847135D249E8456001B237B /* ColourPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847135C249E8456001B237B /* ColourPalette.swift */; };
 		4847135F249E8727001B237B /* System Colours.json in Resources */ = {isa = PBXBuildFile; fileRef = 4847135E249E8727001B237B /* System Colours.json */; };
 /* End PBXBuildFile section */
@@ -29,7 +29,7 @@
 		4847134F249E7248001B237B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48471351249E7248001B237B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48471357249E7AA6001B237B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		48471359249E7DEA001B237B /* ColourGroupListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourGroupListViewController.swift; sourceTree = "<group>"; };
+		48471359249E7DEA001B237B /* ColourPaletteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourPaletteViewController.swift; sourceTree = "<group>"; };
 		4847135C249E8456001B237B /* ColourPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourPalette.swift; sourceTree = "<group>"; };
 		4847135E249E8727001B237B /* System Colours.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "System Colours.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,7 +67,7 @@
 				4847135B249E8443001B237B /* Data */,
 				48471343249E7247001B237B /* AppDelegate.swift */,
 				483D47CC24A2926E00D5B1D9 /* ColourDataViewController.swift */,
-				48471359249E7DEA001B237B /* ColourGroupListViewController.swift */,
+				48471359249E7DEA001B237B /* ColourPaletteViewController.swift */,
 				483D47CA24A28CF600D5B1D9 /* ColourTableViewCell.swift */,
 				48471357249E7AA6001B237B /* RootViewController.swift */,
 				48471345249E7247001B237B /* SceneDelegate.swift */,
@@ -158,7 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4847135A249E7DEA001B237B /* ColourGroupListViewController.swift in Sources */,
+				4847135A249E7DEA001B237B /* ColourPaletteViewController.swift in Sources */,
 				48471344249E7247001B237B /* AppDelegate.swift in Sources */,
 				4847135D249E8456001B237B /* ColourPalette.swift in Sources */,
 				48471358249E7AA6001B237B /* RootViewController.swift in Sources */,

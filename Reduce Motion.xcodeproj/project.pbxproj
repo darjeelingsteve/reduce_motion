@@ -12,6 +12,7 @@
 		483D47D224A39A1600D5B1D9 /* CentreSquarePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483D47D124A39A1600D5B1D9 /* CentreSquarePresentationController.swift */; };
 		483D47D424A3AA8B00D5B1D9 /* BouncyTransformTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483D47D324A3AA8B00D5B1D9 /* BouncyTransformTransitionAnimator.swift */; };
 		483D47D624A3CFB000D5B1D9 /* ColourDataViewTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483D47D524A3CFB000D5B1D9 /* ColourDataViewTransitioningDelegate.swift */; };
+		483D47D824A3E17000D5B1D9 /* CrossFadeTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483D47D724A3E17000D5B1D9 /* CrossFadeTransitionAnimator.swift */; };
 		48471344249E7247001B237B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48471343249E7247001B237B /* AppDelegate.swift */; };
 		48471346249E7247001B237B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48471345249E7247001B237B /* SceneDelegate.swift */; };
 		4847134D249E7248001B237B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4847134C249E7248001B237B /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		483D47D124A39A1600D5B1D9 /* CentreSquarePresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentreSquarePresentationController.swift; sourceTree = "<group>"; };
 		483D47D324A3AA8B00D5B1D9 /* BouncyTransformTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyTransformTransitionAnimator.swift; sourceTree = "<group>"; };
 		483D47D524A3CFB000D5B1D9 /* ColourDataViewTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourDataViewTransitioningDelegate.swift; sourceTree = "<group>"; };
+		483D47D724A3E17000D5B1D9 /* CrossFadeTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossFadeTransitionAnimator.swift; sourceTree = "<group>"; };
 		48471340249E7247001B237B /* Reduce Motion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reduce Motion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48471343249E7247001B237B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48471345249E7247001B237B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				483D47D324A3AA8B00D5B1D9 /* BouncyTransformTransitionAnimator.swift */,
 				483D47D124A39A1600D5B1D9 /* CentreSquarePresentationController.swift */,
 				483D47D524A3CFB000D5B1D9 /* ColourDataViewTransitioningDelegate.swift */,
+				483D47D724A3E17000D5B1D9 /* CrossFadeTransitionAnimator.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				4847135D249E8456001B237B /* ColourPalette.swift in Sources */,
 				48471358249E7AA6001B237B /* RootViewController.swift in Sources */,
 				483D47CD24A2926E00D5B1D9 /* ColourDataViewController.swift in Sources */,
+				483D47D824A3E17000D5B1D9 /* CrossFadeTransitionAnimator.swift in Sources */,
 				483D47D424A3AA8B00D5B1D9 /* BouncyTransformTransitionAnimator.swift in Sources */,
 				483D47CB24A28CF600D5B1D9 /* ColourTableViewCell.swift in Sources */,
 				48471346249E7247001B237B /* SceneDelegate.swift in Sources */,

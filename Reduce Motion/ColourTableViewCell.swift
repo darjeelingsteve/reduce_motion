@@ -8,14 +8,14 @@
 
 import UIKit
 
-/// The table cell used to show a `ColourData` instance.
+/// The table cell used to show a `ColourDetail` instance.
 final class ColourTableViewCell: UITableViewCell {
     
-    /// The colour data displayed by the receiver.
-    var colourData: ColourData? {
+    /// The colour details displayed by the receiver.
+    var colourDetails: ColourDetails? {
         didSet {
-            textLabel?.text = colourData?.name
-            colourWell.colourData = colourData
+            textLabel?.text = colourDetails?.name
+            colourWell.colourDetails = colourDetails
         }
     }
     
@@ -48,12 +48,12 @@ final class ColourTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        colourData = nil
+        colourDetails = nil
     }
 }
 
 private final class ColourWellView: UIView {
-    var colourData: ColourData? {
+    var colourDetails: ColourDetails? {
         didSet {
             setNeedsDisplay()
         }
@@ -70,7 +70,7 @@ private final class ColourWellView: UIView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        colourData?.colour.set()
+        colourDetails?.colour.set()
         UIBezierPath(roundedRect: rect, cornerRadius: 6).fill()
     }
     

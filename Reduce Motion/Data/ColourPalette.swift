@@ -26,11 +26,11 @@ struct ColourGroup: Codable, Hashable {
     let name: String
     
     /// The colour data contained in the group.
-    let colours: [ColourData]
+    let colours: [ColourDetails]
 }
 
 /// Represents the information about a colour.
-struct ColourData: Codable, Hashable {
+struct ColourDetails: Codable, Hashable {
     
     /// The name of the colour.
     let name: String

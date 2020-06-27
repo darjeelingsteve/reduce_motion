@@ -1,5 +1,5 @@
 //
-//  ColourDataViewController.swift
+//  ColourDetailsViewController.swift
 //  Reduce Motion
 //
 //  Created by Stephen Anthony on 23/06/2020.
@@ -8,19 +8,19 @@
 
 import UIKit
 
-/// The view controller used to show a `ColourData`'s name and colour.
-final class ColourDataViewController: UIViewController {
+/// The view controller used to show a `ColourDetail`'s name and colour.
+final class ColourDetailsViewController: UIViewController {
     
     /// The delegate of the receiver.
-    weak var delegate: ColourDataViewControllerDelegate?
+    weak var delegate: ColourDetailsViewControllerDelegate?
     
     private let childColourDisplayViewController: ColourDisplayViewController
     
     private let childNavigationController: UINavigationController
     
-    init(colourData: ColourData) {
-        childColourDisplayViewController = ColourDisplayViewController(colour: colourData.colour)
-        childColourDisplayViewController.title = colourData.name
+    init(colourDetails: ColourDetails) {
+        childColourDisplayViewController = ColourDisplayViewController(colour: colourDetails.colour)
+        childColourDisplayViewController.title = colourDetails.name
         childNavigationController = UINavigationController(rootViewController: childColourDisplayViewController)
         super.init(nibName: nil, bundle: nil)
     }
@@ -46,17 +46,17 @@ final class ColourDataViewController: UIViewController {
     }
     
     @objc private func close(_ sender: Any) {
-        delegate?.colourDataViewControllerDidFinish(self)
+        delegate?.colourDetailsViewControllerDidFinish(self)
     }
 }
 
-/// The protocol to conform to for delegate's of `ColourDataViewController`.
-protocol ColourDataViewControllerDelegate: AnyObject {
+/// The protocol to conform to for delegate's of `ColourDetailsViewController`.
+protocol ColourDetailsViewControllerDelegate: AnyObject {
     
     /// The message sent when the user wishes to dismiss the sender.
-    /// - Parameter colourDataViewController: The controller sending the
+    /// - Parameter colourDetailsViewController: The controller sending the
     /// message.
-    func colourDataViewControllerDidFinish(_ colourDataViewController: ColourDataViewController)
+    func colourDetailsViewControllerDidFinish(_ colourDetailsViewController: ColourDetailsViewController)
 }
 
 /// A view controller used to display a colour.

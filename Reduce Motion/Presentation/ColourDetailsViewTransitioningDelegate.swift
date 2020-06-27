@@ -1,5 +1,5 @@
 //
-//  ColourDataViewTransitioningDelegate.swift
+//  ColourDetailsViewTransitioningDelegate.swift
 //  Reduce Motion
 //
 //  Created by Stephen Anthony on 24/06/2020.
@@ -9,8 +9,8 @@
 import UIKit
 
 /// The transitioning delegate to use when presenting a
-/// `ColourDataViewController`.
-final class ColourDataViewTransitioningDelegate: NSObject {
+/// `ColourDetailsViewController`.
+final class ColourDetailsViewTransitioningDelegate: NSObject {
     private let sourceRect: CGRect
     
     init(sourceRect: CGRect) {
@@ -20,7 +20,7 @@ final class ColourDataViewTransitioningDelegate: NSObject {
 
 // MARK: - UIViewControllerTransitioningDelegate
 
-extension ColourDataViewTransitioningDelegate: UIViewControllerTransitioningDelegate {
+extension ColourDetailsViewTransitioningDelegate: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         return CentreSquarePresentationController(presentedViewController: presented, presenting: presenting)
     }

@@ -20,10 +20,10 @@ final class ColourPaletteViewController: UIViewController {
         return tableView
     }()
     
-    private lazy var dataSource = ColourPaletteTableViewDataSource(tableView: tableView) { [weak self] (tableView, indexPath, colourData) -> UITableViewCell? in
+    private lazy var dataSource = ColourPaletteTableViewDataSource(tableView: tableView) { [weak self] (tableView, indexPath, colourDetails) -> UITableViewCell? in
         guard let self = self else { return nil }
         let colourCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ColourTableViewCell
-        colourCell.colourData = colourData
+        colourCell.colourDetails = colourDetails
         colourCell.accessoryType = .disclosureIndicator
         return colourCell
     }
@@ -31,7 +31,7 @@ final class ColourPaletteViewController: UIViewController {
     init(colourPalette: ColourPalette) {
         super.init(nibName: nil, bundle: nil)
         title = colourPalette.name
-        var snapshot = NSDiffableDataSourceSnapshot<TableSection, ColourData>()
+        var snapshot = NSDiffableDataSourceSnapshot<TableSection, ColourDetails>()
         colourPalette.colourGroups.forEach { (colourGroup) in
             snapshot.appendSections([.colourList(name: colourGroup.name)])
             snapshot.appendItems(colourGroup.colours)
@@ -63,11 +63,11 @@ final class ColourPaletteViewController: UIViewController {
 
 extension ColourPaletteViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let selectedColourData = dataSource.itemIdentifier(for: indexPath) else { return }
+        guard let selectedColourDetails = dataSource.itemIdentifier(for: indexPath) else { return }
         tableView.deselectRow(at: indexPath, animated: true)
         let cell = tableView.cellForRow(at: indexPath) as! ColourTableViewCell
         delegate?.colourPaletteViewController(self,
-                                              didSelectColourData: selectedColourData,
+                                              didSelectColourDetails: selectedColourDetails,
                                               selectionRect: view.convert(cell.colourWellFrame, from: cell))
     }
 }
@@ -78,18 +78,18 @@ protocol ColourPaletteViewControllerDelegate: AnyObject {
     /// The message sent when the user selects a colour from the sender's list.
     /// - Parameters:
     ///   - colourPaletteViewController: The controller sending the message.
-    ///   - colourData: The colour data representing the colour the user
+    ///   - colourDetails: The colour details representing the colour the user
     ///   selected.
     ///   - selectionRect: The rect in the sender's view's coordinate space at
     ///   which the user selected the given colour data.
-    func colourPaletteViewController(_ colourPaletteViewController: ColourPaletteViewController, didSelectColourData colourData: ColourData, selectionRect: CGRect)
+    func colourPaletteViewController(_ colourPaletteViewController: ColourPaletteViewController, didSelectColourDetails colourDetails: ColourDetails, selectionRect: CGRect)
 }
 
 private enum TableSection: Hashable {
     case colourList(name: String)
 }
 
-private class ColourPaletteTableViewDataSource: UITableViewDiffableDataSource<TableSection, ColourData> {
+private class ColourPaletteTableViewDataSource: UITableViewDiffableDataSource<TableSection, ColourDetails> {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch snapshot().sectionIdentifiers[section] {
         case .colourList(let name):

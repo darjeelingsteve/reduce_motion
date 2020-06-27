@@ -11,7 +11,7 @@ import UIKit
 /// The view controller responsible for hosting the main scene's user interface.
 final class RootViewController: UIViewController {
     private let childNavigationController: UINavigationController
-    private var colourDataViewTransitioningDelegate: ColourDataViewTransitioningDelegate?
+    private var colourDetailsViewTransitioningDelegate: ColourDetailsViewTransitioningDelegate?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         let colourPaletteViewController = ColourPaletteViewController(colourPalette: ColourPalette.systemColours)
@@ -43,22 +43,22 @@ final class RootViewController: UIViewController {
 // MARK: - ColourPaletteViewControllerDelegate
 
 extension RootViewController: ColourPaletteViewControllerDelegate {
-    func colourPaletteViewController(_ colourPaletteViewController: ColourPaletteViewController, didSelectColourData colourData: ColourData, selectionRect: CGRect) {
-        colourDataViewTransitioningDelegate = ColourDataViewTransitioningDelegate(sourceRect: selectionRect)
-        let colourDataViewController = ColourDataViewController(colourData: colourData)
-        colourDataViewController.delegate = self
-        colourDataViewController.transitioningDelegate = colourDataViewTransitioningDelegate
-        colourDataViewController.modalPresentationStyle = .custom
-        present(colourDataViewController, animated: true)
+    func colourPaletteViewController(_ colourPaletteViewController: ColourPaletteViewController, didSelectColourDetails colourDetails: ColourDetails, selectionRect: CGRect) {
+        colourDetailsViewTransitioningDelegate = ColourDetailsViewTransitioningDelegate(sourceRect: selectionRect)
+        let colourDetailsViewController = ColourDetailsViewController(colourDetails: colourDetails)
+        colourDetailsViewController.delegate = self
+        colourDetailsViewController.transitioningDelegate = colourDetailsViewTransitioningDelegate
+        colourDetailsViewController.modalPresentationStyle = .custom
+        present(colourDetailsViewController, animated: true)
     }
 }
 
-// MARK: - ColourDataViewControllerDelegate
+// MARK: - ColourDetailsViewControllerDelegate
 
-extension RootViewController: ColourDataViewControllerDelegate {
-    func colourDataViewControllerDidFinish(_ colourDataViewController: ColourDataViewController) {
+extension RootViewController: ColourDetailsViewControllerDelegate {
+    func colourDetailsViewControllerDidFinish(_ colourDetailsViewController: ColourDetailsViewController) {
         dismiss(animated: true) {
-            self.colourDataViewTransitioningDelegate = nil
+            self.colourDetailsViewTransitioningDelegate = nil
         }
     }
 }
